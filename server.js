@@ -63,7 +63,7 @@ app.put('/editcard/:id', async (req, res) => {
         const [result] = await connection.execute(
             `UPDATE defaultdb.cards 
              SET card_name = COALESCE(?, card_name),
-                 card_pic = COALESCE(?, card_pic),
+                 card_pic = COALESCE(?, card_pic)
              WHERE id = ?`,
             [card_name ?? null, card_pic ?? null, id]
         );
